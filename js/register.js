@@ -1,7 +1,7 @@
 import { BASE_URL } from "./config.js";
 
 // ./js/register.js
-
+console.log("register.js cargado correctamente");
 window.addEventListener("DOMContentLoaded", () => {
     /* Referencias a elementos del DOM */
     const loginRegisterContainer = document.querySelector("#login-register-container");
