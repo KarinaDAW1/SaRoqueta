@@ -1,4 +1,5 @@
-const BASE_URL = window.location.hostname === "127.0.0.1" ? "" : "/SaRoqueta/";
+import { BASE_URL } from "./config.js";
+
 
 // ./js/admin.js
 
