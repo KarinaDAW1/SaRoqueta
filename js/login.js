@@ -1,6 +1,8 @@
 import { BASE_URL } from "./config.js";
+console.log("BASE_URL en login.js:", BASE_URL);
 
 // ./js/login.js
+
 
 // Cuenta predeterminada de admin
 function setupDefaultAdminAccount() {
@@ -22,6 +24,7 @@ function setupDefaultAdminAccount() {
 
 }
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM completamente cargado en login.js");
 
     const loginForm = document.querySelector('#login-form');
     loginForm.addEventListener('submit', (e)=>{
@@ -51,6 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerContainer = document.querySelector("#register-container");
     const loginLink = document.querySelector("#login-link");
 
+    console.log("Verificando existencia de elementos en login.js:");
+    console.log(loginForm);
+    console.log(loginLink);
+    console.log(loginRegisterContainer);
+    console.log(registerContainer);
+    
     if (loginLink && registerContainer && loginRegisterContainer) {
         loginLink.addEventListener("click", () => {
             registerContainer.style.display = "none";
