@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = BASE_URL + 'inicio.html';
         } else if (validarUsuario.role === 'admin'){
             //window.location.href = 'admin.html';
-            window.location.href = BASE_URL + "admin.html";
+            window.location.href = BASE_URL + 'admin.html';
 
         } 
     });
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (loginLink && registerContainer && loginRegisterContainer) {
         loginLink.addEventListener("click", () => {
-            registerContainer.style.display = "none";
-            loginRegisterContainer.style.display = "flex";
+            registerContainer.style.display = 'none';
+            loginRegisterContainer.style.display = 'flex';
             if (loginForm) {
                 loginForm.reset(); 
             }
