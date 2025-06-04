@@ -1,0 +1,563 @@
+:root {
+  /* Variables de color reutilizables */
+    --color-grey: #bbbfc3;
+    --color-greyflojo: #cfd2d5;
+    --color-black: #272527;
+    --color-blue: #409CE7;
+    --color-green: #37855C;
+    --color-yellow: #e3ab50;
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Light";
+    }
+
+    /* body{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-black);
+    } */
+
+    /* HEADER */
+    header {
+        width: 100%;
+        position: relative;
+        padding: 10px;
+        background-color: var(--color-yellow);
+        text-align: center; /* Centrar el contenido del header */
+        box-shadow: 10px 20px 30px -5px rgba(0, 0, 0, 0.7);
+
+        
+    }
+
+    .logo {
+        max-width: 10rem;
+    }
+
+    /* NAV HAMBURGESA MÓVIL */
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: inline-block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem; /* Posicionar a la derecha */
+    }
+
+    .abrir-menu {
+        color: var(--color-black);
+    }
+
+    .cerrar-menu {
+        color: var(--color-greyflojo);
+    }
+
+    .nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0px;
+        bottom: 0;
+        background-color: var(--color-black);
+        padding: 3rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        overflow-y: auto;
+        z-index:1;
+    }
+
+    .visible {
+        display: block;
+    }
+
+    .nav-list li {
+        text-decoration: none;
+        color: var(--color-grey);
+        display: block;
+        margin-bottom: 1rem;
+        padding: 10px;
+        font-family: "Roboto Light";
+    }
+
+    .nav-list li:hover {
+        color: var(--color-green);
+        font-weight: bold;
+    }
+        
+    .nav-list {
+        display: block;
+        text-align: left; 
+        padding: 0; 
+    }
+
+    .nav-list li {
+        list-style-type: none;
+    }
+
+#adminLinkContainer,
+#loggedInInfo {
+    display: none;
+}
+
+#logoutButtonNav {
+    display: none;
+    background-color: var(--color-green);
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: var(--color-green);
+}
+
+
+
+    /* MAIN MOVIL */
+    main {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    background-color: var(--color-black);
+    text-align: center; 
+    bottom: 0px;
+    }
+
+    /* ARTICULOS MÓVIL */
+
+    .articulo-primero, .articulo-segundo, .articulo-tercero{
+        display: inline-block;
+        position: static;
+        height: 350px; 
+        margin: 10px;
+        padding: 10px;
+        right: 0;
+        background-color: var(--color-grey);
+        border-radius: 10px;
+        box-shadow: 10px 20px 30px -5px rgba(0, 0, 0, 0.7);
+
+
+    }
+
+    .articulo-cuarto, .articulo-cinco, .articulo-seis{
+        display: inline-block;
+        position: static;
+        height: 350px; 
+        margin: 10px;
+        padding: 10px;
+        right: 0;
+        background-color: var(--color-grey);
+        border-radius: 10px;
+        box-shadow: 10px 20px 30px -5px rgba(0, 0, 0, 0.7);
+
+    }
+
+    /* IMG ARTICULOS MÓVIL */
+    .img-articulo1, .img-articulo2, .img-articulo3 {
+        width:100%;
+        height: 300px;
+        padding: 3px;
+        background-color:var(--color-yellow);
+        border-radius: 10px;
+    }
+
+    .img-articulo4, .img-articulo5, .img-articulo6{
+        width:100%;
+        height: 300px;
+        padding: 3px;
+        background-color:var(--color-yellow);
+        border-radius: 10px;
+    }
+
+    /* HOVER ARTICULOS */
+
+    article:hover {
+        transform: scale(1.03);
+    }
+
+    /* H1 CADA ARTICULO */
+
+    main > section > article > h1{
+        color: var(--color-black);
+        font-family:"Roboto Medium";
+    }
+
+    /* LIKE CADA ARTICULO */
+    button[id^="like"] {
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+    /* BOTON COUNT DE LIKE */
+    .like-count {
+        margin-left: 6px; 
+        font-weight: bold;
+    }
+
+    /*FOOTER MOVIL */
+    footer {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    background-color: var(--color-grey);
+    height: 150px;
+    text-align: center;
+    bottom: 0px;
+    box-shadow: 10px 20px 30px -5px rgba(0, 0, 0, 0.7);
+
+    }
+
+    /* IMG FOOTER */
+
+    .Talaiot-Footer {
+    display: inline-block;
+    max-width: 5rem;
+    position: absolute;
+    left: 15%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    }
+
+    /* NAV FOOTER */
+
+    #nav-footer {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    }
+
+    #nav-footer nav {
+    display: inline-block;
+    }
+
+    #nav-footer li {
+        display: inline-block;
+        list-style-type: none;
+        margin-right: 1rem;
+        color: var(--color-black);
+    }
+
+    #nav-footer li {
+
+        color: var(--color-black);
+    }
+
+    #nav-footer li:hover {
+        color: var(--color-green);
+        font-weight: bold;
+    }
+
+    /* All Rights Reserved  Footer Sa Roqueta */
+
+    footer p {
+        position: relative;
+        font-family: "Roboto Light";
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        right: 70px;
+        top: 100px;
+    }
+
+
+@media screen and (min-width: 601px) {
+    /*MEDIA TABLET*/
+
+    /* NAV TABLET */
+
+    .nav {
+        display: block;
+        position: static;
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+        box-shadow: none;
+        padding: 0px;
+
+    }
+    .nav-list {
+        
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0px;
+
+    }
+
+    .nav-list li {
+        display: inline-block;
+        margin-right: 1rem;
+        color: var(--color-black);
+    }
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: none;
+    }
+
+    /* MAIN */
+
+    main {
+        width: 100%;
+        position:static;
+        padding: 1rem;
+        background-color: var(--color-black);
+        text-align: center;
+    }
+
+    /* H1 TITULOS */
+
+    main > section > article > h1{
+        color: var(--color-black);
+        font-family:"Roboto Medium";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* FONDO ARTICULOS*/
+
+    .articulo-primero, .articulo-segundo, .articulo-tercero, .articulo-cuarto, .articulo-cinco, .articulo-seis{
+        display: inline-block;
+        position: relative;
+        margin: 10px;
+        padding: 10px;
+        right: 0;
+        background-color: var(--color-grey);
+    }
+
+    /* IMG Articulos */
+
+    .img-articulo1, .img-articulo2, .img-articulo3 {
+        display: inline-block;
+        width:500px;
+        height: 300px;
+        border-color: var(--color-greyflojo);
+    }
+
+    .img-articulo4, .img-articulo5, .img-articulo6{
+        display: inline-block;
+        width:500px;
+        height: 300px;
+        border-color: var(--color-greyflojo);
+    }
+
+
+
+
+
+    /* FOOTER */
+
+    footer {
+        width: 100%;
+        position: relative;
+        padding: 1rem;
+        background-color: var(--color-grey);
+        text-align: center;
+        height: 160px;
+        bottom: 0px;
+    }
+
+    /* IMG FOOTER */
+
+    .Talaiot-Footer {
+        display: inline-block;
+        max-width: 5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 70px;
+    }
+
+    /* NAV FOOTER */
+
+    #nav-footer {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
+    }
+
+    #nav-footer nav {
+        display: inline-block;
+    }
+
+    #nav-footer li {
+        display: inline-block;
+        list-style-type: none;
+        margin-right: 1rem;
+        text-decoration: none;
+        color: var(--color-black);
+    }
+
+    #nav-footer li:hover {
+        color: var(--color-green);
+        font-weight: bold;
+    }
+
+    /* All Rights Reserved  Footer Sa Roqueta */
+
+    footer > p {
+        position: relative;
+        font-family: "Roboto Light";
+        left: 70xp;
+        transform: translateX(-50%);
+        top: 120px;
+        margin: 0;
+    }
+
+}
+
+@media screen and (min-width: 1025px) and (max-width:2196px)  {
+    /*DESKTOP MEDIA*/
+
+    /* MENÚ DESKTOP */
+    .nav {
+        display: block;
+        position: static;
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+        box-shadow: none;
+        padding: 0px;
+        
+
+    }
+    .nav-list {
+        display: flex;
+        vertical-align: middle;
+        padding: 0px;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    .nav-list li {
+        display: inline-block;
+        margin-right: 1rem;
+        color: var(--color-black);
+    }
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: none;
+    }
+
+    /* MAIN */
+
+    main {
+        width: 100%;
+        position:static;
+        padding: 1rem;
+        background-color: var(--color-black);
+        text-align: center;
+    }
+
+    /* H1 DE CADA ARTICULO */
+
+    main > section > article > h1{
+        color: var(--color-black);
+        font-family:"Roboto Medium";
+    }
+
+    /* CADA ARTICULO FONDO */
+
+    .articulo-primero, .articulo-segundo, .articulo-tercero, .articulo-cuarto, .articulo-cinco, .articulo-seis{
+        display: inline-block;
+        position: relative;
+        margin: 10px;
+        padding: 10px;
+        right: 0;
+        background-color: var(--color-grey);
+    }
+
+    /* IMAGEN DE CADA ARTICULO */
+
+    .img-articulo1, .img-articulo2, .img-articulo3 {
+        display: inline-block;
+        width:500px;
+        height: 300px;
+        border-color: var(--color-greyflojo);
+    }
+
+    .img-articulo4, .img-articulo5, .img-articulo6{
+        display: inline-block;
+        width:500px;
+        height: 300px;
+        border-color: var(--color-greyflojo);
+    }
+
+    /* FOOTER */
+
+    footer {
+        width: 100%;
+        position: relative;
+        padding: 1rem;
+        background-color: var(--color-grey);
+        text-align: center;
+        height: 160px;
+        bottom: 0px;
+    }
+
+    .Talaiot-Footer {
+        display: inline-block;
+        max-width: 5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 70px;
+    }
+
+    #nav-footer {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
+    }
+
+    #nav-footer nav {
+        display: inline-block;
+    }
+
+    #nav-footer li {
+        display: inline-block;
+        list-style-type: none;
+        margin-right: 1rem;
+        color: var(--color-black);
+        text-decoration: none;
+    }
+
+    #nav-footer li:hover {
+        color: var(--color-green);
+        font-weight: bold;
+    }
+
+    footer > p {
+        position: relative;
+        font-family: "Roboto Light";
+        left: 70xp;
+        transform: translateX(-50%);
+        top: 120px;
+        margin: 0;
+    }
+    
+}
+
