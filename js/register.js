@@ -3,11 +3,20 @@ import { BASE_URL } from "./config.js";
 // ./js/register.js
 console.log("register.js cargado correctamente");
 window.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM completamente cargado.");
     /* Referencias a elementos del DOM */
+
+    /* Comprovando que se ha iniciado bien o que existe */
+    console.log(document.querySelector("#register-link"));
+    console.log(document.querySelector("#login-register-container"));
+    console.log(document.querySelector("#register-container"));
+    
     const loginRegisterContainer = document.querySelector("#login-register-container");
     const registerContainer = document.querySelector("#register-container");
     const registerLink = document.querySelector("#register-link");
     const loginLink = document.querySelector("#login-link");
+
+    
 
     /* Inputs del registro */
     const userNameInput = document.querySelector("#username-register");
