@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = document.querySelector('#username-login').value;
         const password = document.querySelector('#password-login').value;
 
-        const Users = JSON.parse(localStorage.getItem('users')) || [];
-        const validarUsuario = Users.find(user => user.name === name && user.password === password);
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const validarUsuario = users.find(user => user.name === name && user.password === password);
         if(!validarUsuario) {
             return alert ('Usuario y/o contraseña incorrectos');
         }
 
-        sessionStorage.setItem('loggedInUser', JSON.stringify(validarUsuario));
+        localStorage.setItem('loggedInUser', JSON.stringify(validarUsuario));
         alert('Has ingresado correctamente tus credenciales.');
 
         if(validarUsuario.role === 'lector') {
