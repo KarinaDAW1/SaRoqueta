@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loggedInInfo = document.querySelector("#loggedInInfo");
     const adminLinkContainer = document.querySelector("#adminLinkContainer");
 
-    const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
     /* Funcionalidad del menú abrir/cerrar */
     if (btnOpen) {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Proteger página admin */
     if (!loggedInUser || loggedInUser.role !== 'admin') {
-        if (window.location.pathname.includes("admin.html")) {
+        if (window.location.pathname.includes("/admin.html")) {
             //window.location.href = "inicio.html";
             window.location.href = BASE_URL + "inicio.html";
         }
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Expiración de sesión tras 2 minutos */
     if (loggedInUser && (loggedInUser.role === 'admin' || loggedInUser.role === 'lector')) {
         setTimeout(() => {
-            sessionStorage.removeItem('loggedInUser');
+            localStorage.removeItem('loggedInUser');
             alert("Tu sesión ha expirado. Debes volver a iniciar sesión.");
             //window.location.href = "inicio.html";
             window.location.href = BASE_URL + "inicio.html";
