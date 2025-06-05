@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Icono lleno si el usuario ya dio like
-    const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
       const relacion = usuario_article.find(a => a.id_article === articleId);
       if (relacion && relacion.nom_usuari.includes(loggedInUser.name)) {
