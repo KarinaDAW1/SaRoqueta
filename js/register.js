@@ -194,7 +194,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             
-            // 4. Si no hay duplicados y todo es válido, añadir el nuevo usuario
+            // Si no hay duplicados y todo es válido, añadir el nuevo usuario
             const role = (adminCheckbox && adminCheckbox.checked) ? 'admin' : 'lector';
 
             Users.push({
