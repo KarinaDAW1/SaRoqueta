@@ -177,7 +177,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const repassword = confirmPasswordInput.value;
 
             // 2. Cargar usuarios existentes de localStorage
-            let Users = JSON.parse(localStorage.getItem('users')) || [];
+            let users = JSON.parse(localStorage.getItem('users')) || [];
 
             // 3. Verificar si el email o nombre de usuario ya están registrados
             const UserRegisteredEmail = Users.find(user => user.email === email);
@@ -194,7 +194,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             
             // 4. Si no hay duplicados y todo es válido, añadir el nuevo usuario
-            Users.push({
+            users.push({
                 name: name,
                 email: email,
                 password: password,
@@ -206,7 +206,7 @@ window.addEventListener("DOMContentLoaded", () => {
             // en el index - > comprovar si article existeix, sino crear articles (JSON DEL ARTICLE)
 
             // 5. Guardar la lista actualizada de usuarios en localStorage
-            localStorage.setItem('users', JSON.stringify(Users));
+            localStorage.setItem('users', JSON.stringify(users));
 
             // 6. Mostrar el overlay de confirmación
             if (confirmOverlay) {
