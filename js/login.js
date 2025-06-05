@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Has ingresado correctamente tus credenciales.');
 
         if(validarUsuario.role === 'lector') {
-            window.location.href = BASE_URL + 'inicio.html';
+            window.location.href = BASE_URL + "inicio.html";
         } else if (validarUsuario.role === 'admin'){
             //window.location.href = 'admin.html';
             window.location.href = BASE_URL + 'admin.html';
