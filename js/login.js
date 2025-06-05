@@ -25,7 +25,8 @@ function setupDefaultAdminAccount() {
 }
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente cargado en login.js");
-
+    console.log("Creada la cuenta admin");
+    setupDefaultAdminAccount()
     const loginForm = document.querySelector('#login-form');
     loginForm.addEventListener('submit', (e)=>{
         e.preventDefault();
