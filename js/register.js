@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.querySelector("#email-register");
     const passwordInput = document.querySelector("#password-register");
     const confirmPasswordInput = document.querySelector("#re-password-register");
+    const adminCheckbox = document.querySelector("#admin-checkbox");
     const iconoMatch = document.getElementById("password-match-icon");
     const showPassword = document.getElementById("showPassword");
 
@@ -194,12 +195,14 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             
             // 4. Si no hay duplicados y todo es válido, añadir el nuevo usuario
-            users.push({
+            const role = (adminCheckbox && adminCheckbox.checked) ? 'admin' : 'lector';
+
+            Users.push({
                 name: name,
                 email: email,
                 password: password,
                 repassword: repassword,
-                role: 'lector',
+                role: role,
             });
 
             // article id y numlikes.
