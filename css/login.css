@@ -342,7 +342,7 @@ main {
     left: 0;
     width: 100vw;
     height: 100vh;
-    display: none; /* oculto inicialmente */
+    display: none; 
     justify-content: center;
     align-items: center;
     background-color: rgba(0,0,0,0.3);
@@ -381,13 +381,16 @@ main {
     border-color: var(--color-green);
 }
 
+#admin-checkbox-container label {
+    display: inline;
+}
 
-
-
-
-
-
-
+#admin-checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-direction: column;
+}
 
 /* FOOTER */
 
