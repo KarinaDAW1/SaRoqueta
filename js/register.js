@@ -171,16 +171,16 @@ window.addEventListener("DOMContentLoaded", () => {
         formRegister.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            // 1. Obtener los valores de los campos
+            // Obtener los valores de los campos
             const name = userNameInput.value;
             const email = emailInput.value;
             const password = passwordInput.value;
             const repassword = confirmPasswordInput.value;
 
-            // 2. Cargar usuarios existentes de localStorage
-            let users = JSON.parse(localStorage.getItem('users')) || [];
+            // Cargar usuarios existentes de localStorage
+            let Users = JSON.parse(localStorage.getItem('users')) || [];
 
-            // 3. Verificar si el email o nombre de usuario ya están registrados
+            // Verificar si el email o nombre de usuario ya están registrados
             const UserRegisteredEmail = Users.find(user => user.email === email);
             const UserRegisteredName = Users.find(user => user.name === name);
 
@@ -205,17 +205,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 role: role,
             });
 
-            // article id y numlikes.
-            // en el index - > comprovar si article existeix, sino crear articles (JSON DEL ARTICLE)
-
-            // 5. Guardar la lista actualizada de usuarios en localStorage
-            localStorage.setItem('users', JSON.stringify(users));
-
-            // 6. Mostrar el overlay de confirmación
+            localStorage.setItem('users', JSON.stringify(Users));
+            
             if (confirmOverlay) {
                 confirmOverlay.style.display = "flex";
             }
-            // 7. Después de unos segundos, ocultar el overlay y volver a la pantalla de login
+            // Después de unos segundos, ocultar el overlay y volver a la pantalla de login
             setTimeout(() => {
                 if (confirmOverlay) {
                     confirmOverlay.style.display = "none";
@@ -228,9 +223,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 
                 // Limpiar el formulario de registro para el siguiente uso
                 formRegister.reset();
-                toggleSubmitButton(); // Deshabilitar el botón de registro de nuevo 
+                toggleSubmitButton();
 
-            }, 3000); // 3 segundos
+            }, 3000); // 3 segs
         });
     }
 });
