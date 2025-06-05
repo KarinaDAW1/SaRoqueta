@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function toggleLike(articleId) {
-    const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (!loggedInUser) {
       alert("Debes iniciar sesión para dar like.");
       return null;
