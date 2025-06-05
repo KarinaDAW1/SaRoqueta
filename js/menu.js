@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Botón de cerrar sesión */
     if (logoutBtn) {
         logoutBtn.addEventListener("click", () => {
-            sessionStorage.removeItem("loggedInUser");
+            localStorage.removeItem("loggedInUser");
 
             // Ocultar menú de sesión y mostrar login
             if (loggedInInfo) loggedInInfo.style.display = "none";
