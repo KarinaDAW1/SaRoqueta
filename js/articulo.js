@@ -6,12 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const NavetaTudors = document.querySelector(".img-articulo1");
+  // Cercioramos que sea si es la imagen del articulo, entraremos al articulo al hacerle click.
   if (NavetaTudors) {
     NavetaTudors.addEventListener('click', () => {
       window.location.href = BASE_URL + 'articulo.html';
     });
   }
 
+  // Array JSON con ID (Tengo 6 articulos pero solo uso 1) y su número de Likes.
   let articles = JSON.parse(localStorage.getItem("articles")) || [
     { id: 1, numLikes: 0 },
     { id: 2, numLikes: 0 },
@@ -35,14 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleLike(articleId) {
     console.log("toggleLike ejecutado. Usuario logueado:", loggedInUser);
 
+    // Si el usuario que no está logeado intenta dar like, no le dejará.
     if (!loggedInUser) {
       alert("Debes iniciar sesión para dar like.");
       return null;
     }
 
+    // Hace la la comparación para filtrar. Si alguno de los dos no cumple, no encontrará el articulo.
     const relacion = usuario_article.find(a => a.id_article === articleId);
     const articulo = articles.find(a => a.id === articleId);
-
+  
     if (!relacion || !articulo) {
       alert("No se ha encontrado el artículo");
       return null;
@@ -50,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const userIndex = relacion.nom_usuari.indexOf(loggedInUser.name);
 
+
+    // Se encarga de añadir o retirar los likes y se asegura de que nunca pase de 0 hacia abajo.
     if (userIndex !== -1) {
 
       relacion.nom_usuari.splice(userIndex, 1);
@@ -67,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const likeButtons = document.querySelectorAll("button[data-id]");
 
+  // Recorre los botones y los actualiza.
   likeButtons.forEach(button => {
     const icon = button.querySelector("i");
     const countSpan = button.querySelector(".like-count");
