@@ -3,6 +3,7 @@ import { BASE_URL } from "./config.js";
 // ./js/articulo.js
 
 document.addEventListener('DOMContentLoaded', () => {
+const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
   const NavetaTudors = document.querySelector(".img-articulo1");
   NavetaTudors.addEventListener('click', ()=>{
@@ -31,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function toggleLike(articleId) {
     console.log("toggleLike ejecutado. Usuario logueado:", loggedInUser);
-    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (!loggedInUser) {
       alert("Debes iniciar sesión para dar like.");
       return null;
@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Icono lleno si el usuario ya dio like
-    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
       const relacion = usuario_article.find(a => a.id_article === articleId);
       if (relacion && relacion.nom_usuari.includes(loggedInUser.name)) {
