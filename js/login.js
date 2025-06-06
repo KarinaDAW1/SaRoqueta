@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(loginLink);
     console.log(loginRegisterContainer);
     console.log(registerContainer);
-    
+
+    // Si hago click en el LoginLink, esconderá el register y mostrará el login.
     if (loginLink && registerContainer && loginRegisterContainer) {
         loginLink.addEventListener("click", () => {
             registerContainer.style.display = 'none';
